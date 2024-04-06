@@ -160,5 +160,15 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
 
-# Ignore all raw images
+# Ignore all raw data
 data/raw/
+
+# Ignore all processed data
+data/dimmed/
+data/edge/
+data/mask/
+data/threshold/
+data/segmented_edge/
+
+# Ignore vector stores
+data/vector_stores/
