@@ -172,3 +172,9 @@ data/segmented_edge/
 
 # Ignore vector stores
 data/vector_stores/
+
+# ignore code/images
+code/images/
+
+#ignore code/vector_store
+code/vector_store
