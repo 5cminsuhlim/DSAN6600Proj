@@ -161,7 +161,7 @@ cython_debug/
 #.idea/
 
 # Ignore all raw data
-data/raw/
+data/
 
 # Ignore all processed data
 data/dimmed/
@@ -178,3 +178,5 @@ code/images/
 
 #ignore code/vector_store
 code/vector_store
+
+landon/
