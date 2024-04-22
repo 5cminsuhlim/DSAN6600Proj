@@ -38,6 +38,16 @@ def main():
     # Reverse dict for pretty name to vector store
     vs_names_rev = {v: k for k, v in vs_names.items()}
 
+    # Create Short names to add to images
+    short_names = {
+        "Thresholded Subject Mask": "Theresholded",
+        "Subject Segmented Edge Detection": "Segmented Edge",
+        "Dimmed Original Image": "Dimmed",
+        "Edge Detection": "Edge Detection",
+        "Subject Mask": "Subject Mask",
+        "Original Image": "Raw Image",
+    }
+
     # Set uploading file to False
     real_file = False
 
@@ -219,29 +229,84 @@ def main():
                 row = 0
                 cols = k
 
-                # Create a figure to display the output images
-                fig, axs = plt.subplots(rows, cols, figsize=(10, 10))
+                # Get the output images for multiple output types
+                if rows > 1:
 
-                # Get the output images
-                for processing in output_type:
-                    logging.info(f"Creating output image for {processing}...")
+                    # Create a figure to display the output images
+                    fig, axs = plt.subplots(rows, cols, figsize=(10, 10))
+
+                    for processing in output_type:
+                        logging.info(f"Creating output image for {processing}...")
+
+                        # Get key
+                        key = vs_names_rev[processing]
+
+                        # Get images and similarities
+                        output_images = results["results"][key]["images"]
+                        similarities = results["results"][key]["similarities"]
+
+                        for i in range(cols):
+                            image_arr = np.array(output_images[i])
+                            axs[row, i].imshow(image_arr)
+                            axs[row, i].axis("off")
+                            axs[row, i].set_title(
+                                f"{short_names[processing]} {i + 1}\nsimilarity: {similarities[i]:.3f}"
+                            )
+
+                        row += 1
+
+                elif rows == 1:
+                    fig, axs = plt.subplots(1, cols, figsize=(10, 10))
 
                     # Get key
+                    processing = output_type[0]
                     key = vs_names_rev[processing]
 
-                    # Get images and similarities
+                    # Get images
                     output_images = results["results"][key]["images"]
                     similarities = results["results"][key]["similarities"]
 
                     for i in range(cols):
                         image_arr = np.array(output_images[i])
-                        axs[row, i].imshow(image_arr)
-                        axs[row, i].axis("off")
-                        axs[row, i].set_title(
-                            f"Similar Image {i + 1}\nsimilarity: {similarities[i]:.3f}"
+                        axs[i].imshow(image_arr)
+                        axs[i].axis("off")
+                        axs[i].set_title(
+                            f"{short_names[processing]} {i + 1}\nsimilarity: {similarities[i]:.3f}"
                         )
 
                     row += 1
+
+                else:
+                    st.write("No output type selected - assuming to output all")
+
+                    output_type = vs_names.values()
+
+                    rows = len(output_type)
+                    row = 0
+                    cols = k
+
+                    # Create a figure to display the output images
+                    fig, axs = plt.subplots(rows, cols, figsize=(10, 10))
+
+                    for processing in output_type:
+                        logging.info(f"Creating output image for {processing}...")
+
+                        # Get key
+                        key = vs_names_rev[processing]
+
+                        # Get images and similarities
+                        output_images = results["results"][key]["images"]
+                        similarities = results["results"][key]["similarities"]
+
+                        for i in range(cols):
+                            image_arr = np.array(output_images[i])
+                            axs[row, i].imshow(image_arr)
+                            axs[row, i].axis("off")
+                            axs[row, i].set_title(
+                                f"{short_names[processing]} {i + 1}\nsimilarity: {similarities[i]:.3f}"
+                            )
+
+                        row += 1
 
                 # Tight layout
                 plt.tight_layout()
