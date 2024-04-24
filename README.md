@@ -37,6 +37,7 @@ Due to its size, downloading from Google Drive results in many separate zip file
 
 ## References
 
+- ArtButMakeItSports (@artbutsports) / x, twitter.com/artbutsports. Accessed 24 Apr. 2024. 
 - He, Kaiming, et al. “Deep residual learning for image recognition.” 2016 IEEE Conference on Computer Vision and Pattern Recognition (CVPR), June 2016, https://doi.org/10.1109/cvpr.2016.90.
 - Redmon, Joseph, et al. “You only look once: Unified, real-time object detection.” 2016 IEEE Conference on Computer Vision and Pattern Recognition (CVPR), June 2016, https://doi.org/10.1109/cvpr.2016.91. 
 - Michael Danielczuk, Matthew Matl, Saurabh Gupta, Andrew Li, Andrew Lee, Jeffrey Mahler, and Ken Goldberg. "Segmenting Unknown 3D Objects from Real Depth Images using Mask R-CNN Trained on Synthetic Data." In *Proc. IEEE Int. Conf. Robotics and Automation (ICRA)*, 2019.
