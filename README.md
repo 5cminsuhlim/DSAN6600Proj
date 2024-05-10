@@ -3,7 +3,6 @@ DSAN6600 Final Project
 
 [![deeplake](https://img.shields.io/badge/powered%20by-Deep%20Lake%20-ff5a1f.svg)](https://github.com/activeloopai/deeplake)
 
-
 ## Team 1 Members:
 - [Austin Barish](https://github.com/austinbarish)
 - [Landon Carpenter](https://github.com/lecarpen23)
@@ -11,8 +10,10 @@ DSAN6600 Final Project
 - [Nolan Penoyer](https://github.com/NolanPenoyer)
 - [Shawn Xu](https://github.com/shawnhxu)
 
-## Introduction
+## Official Written Report (Research Gate)
+[Final Paper](https://www.researchgate.net/publication/380467940_Image_Similarity_Retrieval_using_Deep_Learning)
 
+## Introduction
 Inspired by [@ArtButSports](https://twitter.com/ArtButSports?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor) on Twitter, our team engineered an app that will take in a users' input in the form of an image and output the most similar art image or images. We hope our app enables anyone to find the most similar art piece(s) to their input image!
 
 ## Dataset
@@ -36,7 +37,6 @@ Due to its size, downloading from Google Drive results in many separate zip file
 6) To create a consolidated output, select desired preprocessing type and click "Create Output Image"
 
 ## References
-
 - ArtButMakeItSports (@artbutsports) / x, twitter.com/artbutsports. Accessed 24 Apr. 2024. 
 - He, Kaiming, et al. “Deep residual learning for image recognition.” 2016 IEEE Conference on Computer Vision and Pattern Recognition (CVPR), June 2016, https://doi.org/10.1109/cvpr.2016.90.
 - Redmon, Joseph, et al. “You only look once: Unified, real-time object detection.” 2016 IEEE Conference on Computer Vision and Pattern Recognition (CVPR), June 2016, https://doi.org/10.1109/cvpr.2016.91. 
